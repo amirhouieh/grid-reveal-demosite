@@ -12,8 +12,8 @@ export const App: React.FC<{}> = ()=> {
     const [error, setError] = useState<null|string>(null);
     const [url, setUrl] = useState<string>("");
     const [res, setRes] = useState<IGridRevealResponse|null>(null);
-    const [sizeThreshold, setSizeThreshold] = useState<number|undefined>(undefined);
-    const [textLength, setTextLength] = useState<number|undefined>(undefined);
+    const [sizeThreshold, setSizeThreshold] = useState<number|undefined>(0.01);
+    const [textLength, setTextLength] = useState<number|undefined>(100);
 
     const onInputSubmit: TButtonFn = async() => {
         if(!isValidHttpUrl(url)){
@@ -88,20 +88,20 @@ export const App: React.FC<{}> = ()=> {
                                max={1000}
                                disabled={busy}
                         />
-                        <label>Element's text length</label>
+                        <label>Element's text length{textLength?` (${textLength})`:""})</label>
                     </div>
                     <div>
                         <div className={"rangeWrapper input"}>
                             <input type={"range"}
                                    min={0}
-                                   max={1}
+                                   max={0.5}
                                    value={sizeThreshold}
                                    onInput={(e) => setSizeThreshold(parseFloat(e.currentTarget.value))}
                                    step={0.01}
                                    disabled={busy}
                             />
                         </div>
-                        <label>Element's size threshold</label>
+                        <label>Element's size threshold{sizeThreshold?` (${sizeThreshold})`:""})</label>
                     </div>
                     <div className={"drawBtn"}>
                         <button onClick={onInputSubmit}

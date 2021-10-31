@@ -35,6 +35,7 @@ header{
 .logo h2{
     line-height: 1em;
 }
+
 .npm-badge{
     width: 100px;
 }
@@ -117,4 +118,45 @@ label{
 .drawBtn button{
     height: 56px;
     background: lightgreen;
+}
+.rangeWrapper input{
+    width: 100%;
+}
+
+@media (orientation: portrait) {
+
+    html, body{
+        overflow-y: auto;
+    }
+    :root{
+        --header-h: 75px;
+        --canvas-r: 1;
+    }
+
+    .controls{
+        margin-top: 20px;
+        grid-template-columns: 100%;
+        grid-row-gap: 10px;
+    }
+
+    .input, button{
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    .drawBtn button{
+        background: lightgreen;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    label{
+        font-size: xx-small;
+        margin-top: 2px;
+        display: block;
+    }
+
+    .drawBtn{
+        text-align: center;
+    }
 }
