@@ -1,0 +1,24 @@
+{
+  "name": "grid-reveal-demo",
+  "source": "src/index.html",
+  "browserslist": [
+    "> 0.5%, last 2 versions, not dead"
+  ],
+  "scripts": {
+    "start": "parcel --open chrome",
+    "build": "parcel build"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-compare-image": "^3.1.0",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "parcel": "latest"
+  },
+  "version": "0.1.0",
+  "author": "amirhouieh",
+  "license": "MIT"
+}
