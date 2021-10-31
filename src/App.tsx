@@ -1,11 +1,9 @@
-import React, { ChangeEventHandler, MouseEventHandler, useState } from "react";
+import React, { MouseEventHandler, useState } from "react";
 import { isValidHttpUrl, sendRenderRequestToApi } from "/src/utils";
 import ReactCompareImage from "react-compare-image";
 import { IGridRevealResponse } from "/src/types";
 
-type TInputFn = ChangeEventHandler<HTMLInputElement>;
 type TButtonFn = MouseEventHandler<HTMLButtonElement>;
-
 
 export const App: React.FC<{}> = ()=> {
     const [busy, setBusy] = useState(false);
